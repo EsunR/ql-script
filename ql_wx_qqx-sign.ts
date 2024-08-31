@@ -3,8 +3,10 @@
  * cron: 0 0 10 1/1 *
  */
 import axios from "axios";
-import { getEnvTokens } from "./utils";
+import { getEnvTokens, log } from "./utils";
 import { sendNotify } from "./utils/sendNotify";
+
+const SCRIPT_NAME = "QQ 签到";
 
 /**
  * token example:
@@ -30,18 +32,18 @@ async function sign(token: string) {
             }
         );
         sendNotify(
-            "爱儿心选小程序签到",
+            SCRIPT_NAME,
             "执行结果：\n" + `${resp.data}\n` + `token: ${token}`
         );
     } catch (e) {
         console.error(e);
-        sendNotify("爱儿心选小程序签到", `签到失败, token:${token}`);
+        sendNotify(SCRIPT_NAME, `签到失败, token:${token}`);
     }
 }
 
 async function main() {
     await Promise.all(tokens.map((token) => sign(token)));
-    console.log("爱儿心选小程序签到完成");
+    log(SCRIPT_NAME, "执行完成");
 }
 
 main();
