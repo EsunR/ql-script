@@ -40,6 +40,10 @@ async function sign(token: string) {
             }
         );
         console.log(resp.data);
+        QLAPI.notify(
+            "爱儿心选小程序签执行成功",
+            "执行结果：\n" + `${resp.data}\n` + `token: ${token}`
+        );
     } catch (e) {
         console.log(`签到失败, token:${token}`);
         console.error(e);
