@@ -5,6 +5,7 @@ export function getEnvTokens(tokenName: string) {
     let tokens: string[] = [];
     let i = 1;
     while (true) {
+        // @ts-ignore
         let token = process.env[`${tokenName}_${i}`];
         if (!token) {
             break;
@@ -13,4 +14,8 @@ export function getEnvTokens(tokenName: string) {
         i++;
     }
     return tokens;
+}
+
+export function log(...msg: any[]) {
+    console.log(new Date().toLocaleString(), ...msg);
 }

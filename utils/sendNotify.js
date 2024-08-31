@@ -294,6 +294,10 @@ async function sendNotify(
     params = {},
     author = "\n\n本通知 By：https://github.com/whyour/qinglong"
 ) {
+    console.log('===== 发送通知 start =====')
+    console.log(text + "\n" + desp);
+    console.log('===== 发送通知 end =====')
+
     //提供6种通知
     desp += author; //增加作者信息，防止被贩卖等
 
