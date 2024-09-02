@@ -1,6 +1,6 @@
 /**
  * name: QQ 星小程序签到
- * cron: 0 0 10 1/1 *
+ * cron: 0 9 * * *
  */
 import axios from "axios";
 import { getEnvTokens, log } from "./utils";

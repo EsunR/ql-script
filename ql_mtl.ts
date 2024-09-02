@@ -1,6 +1,6 @@
 /**
  * name: 摩天轮票务监控
- * cron: 0 0 10 1/1 *
+ * cron: 0 9 * * *
  */
 import axios from "axios";
 import { sendNotify } from "./utils/sendNotify";
