@@ -1,6 +1,6 @@
 /**
  * name: 护照业务办理信息查询
- * cron: 0 9 * * *
+ * cron: *\/5 * * * *
  */
 import axios from "axios";
 import { sendNotify } from "./utils/sendNotify";
@@ -45,9 +45,6 @@ async function sendTicketMsg() {
 
 function main() {
     sendTicketMsg();
-    setInterval(() => {
-        sendTicketMsg();
-    }, 1000 * 60 * 5);
 }
 
 main();

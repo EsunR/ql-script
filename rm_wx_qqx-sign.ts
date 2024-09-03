@@ -6,7 +6,7 @@ import axios from "axios";
 import { getEnvTokens, log } from "./utils";
 import { sendNotify } from "./utils/sendNotify";
 
-const SCRIPT_NAME = "QQ 签到";
+const SCRIPT_NAME = "QQ 星小程序签到";
 
 /**
  * token example:
