@@ -3,8 +3,7 @@
  * cron: 30,59 * * * *
  */
 import axios from "axios";
-import { getEnv, log, safeJsonParse } from "utils";
-import { sendNotify } from "utils/sendNotify";
+import { getEnv, log, safeJsonParse } from "./utils";
 
 /**
  * ============= types =============
