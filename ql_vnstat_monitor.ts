@@ -1,9 +1,10 @@
 /**
  * name: vnstat 监控
- * cron: 0 30,59 * * *
+ * cron: 30,59 * * * *
  */
 import axios from "axios";
 import { getEnv, log, safeJsonParse } from "utils";
+import { sendNotify } from "utils/sendNotify";
 
 /**
  * ============= types =============
@@ -83,10 +84,6 @@ async function getVnstatJsonData(url: string) {
 
 function transBitToGb(bit: number): number {
     return bit / 1024 / 1024 / 1024;
-}
-
-function transGbToBit(gb: number): number {
-    return gb * 1024 * 1024 * 1024;
 }
 
 /**
@@ -180,6 +177,8 @@ async function checkVnstat(vnstatConfig: VnstatConfigItem[]) {
         ].join("\n");
 
         log(message);
+
+        QLAPI.notify("Vnstat 监控", message);
     }
 }
 
