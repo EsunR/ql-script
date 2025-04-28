@@ -162,7 +162,7 @@ async function checkVnstat(vnstatConfig: VnstatConfigItem[]) {
                 (item) =>
                     `服务器：${item.hostName}\n` +
                     `- 当前小时已用流量：${item.currentHourGb}GB${
-                        needAlertHostNames.includes(item.hostName) && "⚠️"
+                        needAlertHostNames.includes(item.hostName) ? "⚠️" : ""
                     }\n` +
                     `- 当天已用流量：${item.currentDayGb}GB\n` +
                     `- 当月已用流量：${item.currentMonthGb}GB\n`
