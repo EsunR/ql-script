@@ -1,3 +1,7 @@
+/**
+ * name: Homework 推送
+ * cron: 0 8,20 * * *
+ */
 import { getEnv, log, safeJsonParse } from "./utils";
 
 // ==== types ====
